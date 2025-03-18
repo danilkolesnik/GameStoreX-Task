@@ -1,0 +1,93 @@
+
+.orderWrapper {
+    margin: 1rem;
+
+    @media (min-width: 770px) {
+        width: 50%;
+        margin: auto;
+    }
+
+    @media (min-width: 1000px) {
+        width: 30%;
+        margin: auto;
+    }
+}
+
+.headerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.orderCaption {
+    font-size: 1.5rem;
+}
+
+.orderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.goodsCaption {
+    font-weight: lighter;
+}
+
+.goodsValue {
+    font-weight: bold;
+}
+
+.middleBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.infoCard {
+    background-color: #1F242C;
+    border-radius: 20px;
+    padding: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    height: 122px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoCardContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.infoCardRow {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.infoCardValue {
+    font-size: 1.2rem;
+}
+
+.infoCardMarked {
+    font-size: 1rem;
+    background-color: #FFFFFF1F;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.infoCardDiscount {
+    font-size: 1rem;
+    opacity: 50%;
+    font-weight: bold;
+    text-decoration: line-through;
+}

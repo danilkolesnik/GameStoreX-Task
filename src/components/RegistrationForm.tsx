@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import React, { useState } from 'react';
 import Input from '@component/ui/Input';
 import Button from '@component/ui/Button';
@@ -24,7 +25,14 @@ const RegistrationForm: React.FC = () => {
       body: JSON.stringify({ email, password }),
     });
 
+    const data = await response.json();
+
     console.log('Response:', response); // data.user = {...}
+    
+    if (data.data) {
+      redirect('/orders');
+    }
+    
   };
 
   return (

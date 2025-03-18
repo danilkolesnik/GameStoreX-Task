@@ -3,6 +3,25 @@ export type IconProps = {
     height?: string;
 };
 
+export const ArrowBack = () => (
+    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="evenodd" clipRule="evenodd" d="M7.99997 1.00001C8.39047 0.609493 9.02367 0.609493 9.41417 1.00001C9.80467 1.39054 9.80467 2.0237 9.41417 2.41423L3.53547 8.2929C3.14497 8.6834 3.14497 9.3166 3.53547 9.7071L9.41417 15.5858C9.80467 15.9763 9.80467 16.6095 9.41417 17C9.02367 17.3905 8.39047 17.3905 7.99997 17L0.707082 9.7071C0.316552 9.3166 0.316552 8.6834 0.707082 8.2929L7.99997 1.00001Z" fill="white"/>
+    </svg>
+);
+export const SuccessIcon = () => (
+    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6.66663" cy="6" r="6" fill="#11B174"/>
+        <circle cx="6.66663" cy="6" r="5" stroke="white" strokeOpacity="0.24" strokeWidth="2"/>
+    </svg>
+);
+
+export const FailedIcon = () => (
+    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6.66663" cy="6" r="6" fill="#b1111e"/>
+        <circle cx="6.66663" cy="6" r="5" stroke="white" strokeOpacity="0.24" strokeWidth="2"/>
+    </svg>
+);
+
 export const TelegramIcon = ({ width, height }: IconProps) => (
     <svg width={width || '32'} height={height || '32'} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_2_385)">

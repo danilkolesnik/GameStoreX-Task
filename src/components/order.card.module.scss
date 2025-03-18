@@ -1,0 +1,46 @@
+
+.orderCard {
+  background-color: #1F242C;
+  border-radius: 20px;
+  padding: 0.8rem;
+  cursor: pointer;
+  height: 122px;
+}
+
+.orderCardRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 0; 
+  &:not(:last-child) {
+    border-bottom: 1px solid #FFFFFF29;
+  }
+}
+
+.orderCardCol {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 25%;
+}
+
+.statusWrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.orderCardTitle {
+    color: #fff;
+    opacity: 50%;
+    font-size: 0.7rem;
+    font-weight: 100;
+    text-align: left;
+}
+
+.orderCardValue {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 100;
+    text-align: left;
+}

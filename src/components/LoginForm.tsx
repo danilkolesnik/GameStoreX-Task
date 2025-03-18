@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import Input from '@component/ui/Input';
 import Button from '@component/ui/Button';
 import styles from '@component/components/auth.modal.module.scss';
@@ -15,8 +16,15 @@ const LoginForm: React.FC = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
+    
+    const data = await response.json();
 
-    console.log('Response:', response); // data.token = 12345678
+    console.log('Response:', data); // data.token = 12345678
+
+    if (data.data) {
+      redirect('/orders');
+    }
+
   };
 
   return (
