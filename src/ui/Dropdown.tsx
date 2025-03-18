@@ -13,7 +13,7 @@ interface DropdownProps {
   defaultValue?: string;
 }
 
-export const Dropdown = ({ items, defaultValue }: DropdownProps) => {
+export const Dropdown: React.FC<DropdownProps> = ({ items, defaultValue }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
     items.find((item) => item.value === defaultValue) || items[0]
@@ -21,13 +21,10 @@ export const Dropdown = ({ items, defaultValue }: DropdownProps) => {
 
   return (
     <div className={styles.dropdown}>
-      {/* Кнопка открытия */}
       <button onClick={() => setIsOpen(!isOpen)} className={styles.button}>
         {selectedItem.icon}
         {selectedItem.value}
       </button>
-
-      {/* Выпадающий список с анимацией */}
       {isOpen && (
         <motion.ul
           initial={{ opacity: 0, scale: 0.95, y: -10 }}

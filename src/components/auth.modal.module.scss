@@ -1,45 +1,89 @@
 .modalBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(32px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background-color: #20242C;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  @media (max-width: 770px) {
+    margin: 1rem;
   }
-  
-  .modalContent {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .tabSection {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .tabSection button {
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .activeTab {
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-  }
-  
-  .formSection {
-    padding: 10px;
-  }
-  
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.tabSection {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background-color: #FFFFFF1F;
+  border-radius: 24px;
+}
+
+.tabSection button {
+  width: 45%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.activeTab {
+  background-color: #FFF !important;
+  color: #000;
+  height: 30px;
+}
+
+.closeWrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.forgotPasswordBlock {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.forgotPasswordLink {
+  color: #FFFFFF;
+  opacity: 50%;
+  text-decoration: underline;
+  font-size: 0.8rem
+}
+
+.formSection {
+  padding: 10px;
+}
+
+.formButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submitButtonWrapper {
+  margin-top: 30px;
+}
