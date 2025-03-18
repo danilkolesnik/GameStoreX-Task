@@ -13,21 +13,22 @@ const RegistrationForm: React.FC = () => {
     setIsChecked(e.target.checked);
   };
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (formData: FormData) => {
 
-    const formData = new FormData(e.target as HTMLFormElement);
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-    const formObject: { [key: string]: string } = {};
-    formData.forEach((value, key) => {
-      formObject[key] = value.toString();
+    const response = await fetch(`/api/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
 
-    console.log('Form Data:', formObject);
+    console.log('Response:', response); // data.user = {...}
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form action={handleSubmit}>
       <div className={styles.formButtonWrapper}>
         <Input type="text" id="username" name="username" placeholder="Email or mobile" required />
         <Input type="password" id="password" name="password" placeholder="Password" required />

@@ -1,27 +1,28 @@
-import React from 'react';
 import Input from '@component/ui/Input';
 import Button from '@component/ui/Button';
-import styles from './auth.modal.module.scss';
-import SocialNetworks from './SocialNetworks';
+import styles from '@component/components/auth.modal.module.scss';
+import SocialNetworks from '@component/components/SocialNetworks';
 
 const LoginForm: React.FC = () => {
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
 
-    e.preventDefault();
-    
-    const formData = new FormData(e.target as HTMLFormElement);
-    const formObject: { [key: string]: string } = {};
-    formData.forEach((value, key) => {
-      formObject[key] = value.toString();
+  const handleSubmit = async (formData: FormData) => {
+
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const response = await fetch(`/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
 
-    console.log('Form Data:', formObject);
+    console.log('Response:', response); // data.token = 12345678
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form action={handleSubmit}>
       <div className={styles.formButtonWrapper}>
-        <Input type="text" id="username" name="username" placeholder="Email" required />
+        <Input type="text" id="email" name="email" placeholder="Email" required />
         <Input type="password" id="password" name="password" placeholder="Password" required />
       </div>
       <div className={styles.submitButtonWrapper}>
