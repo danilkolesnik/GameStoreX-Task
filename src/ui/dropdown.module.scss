@@ -1,0 +1,54 @@
+// dropdown.module.scss
+$bg-color: #FFFFFF0A;
+$hover-color: #3a3d47;
+$text-color: #ffffff;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: $bg-color;
+  color: $text-color;
+  padding: 10px 14px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $hover-color;
+  }
+}
+
+.list {
+  position: absolute;
+  left: 0;
+  margin-top: 8px;
+  width: 140px;
+  background: #2C4451;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #FFFFFF29;
+  }
+
+  &:hover {
+    background: #FFFFFF29;
+  }
+}

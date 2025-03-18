@@ -1,0 +1,32 @@
+
+.pageWrapper {
+    display: flex;
+    height: calc(100vh - 52px);
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSection {
+    width: 100%;
+
+    @media (min-width: 770px) {
+        width: 50%;
+    }
+
+    @media (min-width: 1000px) {
+        width: 30%;
+    }
+}
+
+.authButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem;
+}
+
+.ordersButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
