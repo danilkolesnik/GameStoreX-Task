@@ -6,7 +6,7 @@ import OrderCard from '@component/components/OrderCard';
 import Button from '@component/ui/Button';
 
 const OrderDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params; // Ждем загрузки params
+  const { id } = await params;
   const order = orders.find(order => order.id === parseInt(id));
 
   if (!order) {
@@ -16,10 +16,12 @@ const OrderDetails = async ({ params }: { params: Promise<{ id: string }> }) => 
   return (
     <div className={styles.orderWrapper}>
       <header className={styles.orderHeader}>
-        <div className={styles.headerButton}>
-          <CloseIcon />
-          <h1 className={styles.orderCaption}>{order.id}</h1>
-        </div>
+        <a href="/orders">
+          <div className={styles.headerButton}>
+            <CloseIcon />
+            <h1 className={styles.orderCaption}>{order.id}</h1>
+          </div>
+        </a>
       </header>
       <div className={styles.orderContainer}>
         <OrderCard order={order} />
