@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { orders } from '@component/utils/mockup';
 import { notFound } from 'next/navigation';
 import styles from '../orders.page.module.scss';
@@ -16,12 +17,12 @@ const OrderDetails = async ({ params }: { params: Promise<{ id: string }> }) => 
   return (
     <div className={styles.orderWrapper}>
       <header className={styles.orderHeader}>
-        <a href="/orders">
+        <Link href="/orders">
           <div className={styles.headerButton}>
             <CloseIcon />
             <h1 className={styles.orderCaption}>{order.id}</h1>
           </div>
-        </a>
+        </Link>
       </header>
       <div className={styles.orderContainer}>
         <OrderCard order={order} />
